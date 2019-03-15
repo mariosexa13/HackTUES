@@ -1,4 +1,4 @@
-#include "SDL.h"
+#include <SDL.h>
 #include <stdio.h>
 #include <GL/gl.h>
 
@@ -19,15 +19,14 @@ int main(int argc, char* argv[]) {
                 if(event.type==SDL_QUIT)
                     return 1;
         }
-        x+=0.001;
-        if(x>=1){
-            x=-1;
-        }
         glClear(GL_COLOR_BUFFER_BIT);
         glBegin(GL_TRIANGLES);
-        glVertex2f(x,0);
+        glVertex2f(0,0);
+        glVertex2f(0,0.5);
         glVertex2f(0.5,0.5);
-        glVertex2f(0.3,0.5);
+        glVertex2f(0.5,0.5);
+        glVertex2f(0.5,0.0);
+        glVertex2f(0.0,0.0);
         glEnd();
 
         SDL_GL_SwapWindow(window);
